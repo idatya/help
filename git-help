@@ -1,0 +1,94 @@
+jdbc:pivotal:greenplum://192.168.145.98:5432;DatabaseName=gpadmin
+
+[1]
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+[2]
+Use git push to push commits made on your local branch to a remote repository.
+The git push command takes two arguments:
+A remote name, for example, origin
+A branch name, for example, master
+
+[3]
+git commit -m 'my notes' path/to/my/file.ext
+
+[4]
+You can see all branches created by using :
+git branch
+
+[5]
+git clone -branch
+git clone -branch new_feature git://remoterepository.git
+
+
+Summary
+In this document we took a deep look at git clone. The most important takeaways are:
+
+1. git clone is used to create a copy of a target repo
+2. The target repo can be local or remote
+3. Git supports a few network protocols to connect to remote repos
+4. There are many different configuration options available that change the content of the clone
+ 
+[checkpout new project]
+git clone http://git-impetus/iLabs/IDW-WM-PRODUCT.git .
+
+
+[commands]
+got clone https://github.com/idatya/myapp
+git add demo
+touch test.txt
+git add test.txt 
+git push origin master
+
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp$ mkdir impetus
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp$ cd impetus/
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ touch connecture.txt
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git add connecture.txt 
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git commit -m "connecture test"
+
+
+
+--committing a specific directory
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git add big-data/
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git commit -m "bigdata test" big-data/
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git push origin master
+
+--create new branch
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp$ git checkout -b "development"
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp$ git push origin development 
+
+--check status
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp$ git status
+
+--switch branch
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp$ git checkout master
+
+--merge branch
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp$ git checkout master 
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp$ git merge development 
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp$ git push origin master
+
+
+--made changes in master branch and pushed it
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus/big-data$ vi idw.txt 
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus/big-data$ vi idw.txt 
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git add connecture.txt 
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git add big-data/idw.txt 
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git commit -m "test for rebase"
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git push origin master
+
+
+--Instead of a plain git merge, we’ll integrate the feature branch with a rebase to maintain a linear history:
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git checkout development 
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git rebase master
+impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git push origin development 
+
+--git clone
+impadmin@Impetus-N236U:~/aditya/git-repo$ git clone https://github.com/idatya/help
+
+
+
+
+
+
