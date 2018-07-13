@@ -1,5 +1,3 @@
-jdbc:pivotal:greenplum://192.168.145.98:5432;DatabaseName=gpadmin
-
 [1]
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
@@ -85,10 +83,7 @@ impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git rebase master
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git push origin development 
 
 --git clone
+--clone is for fetching repositories you don't have, checkout is for switching between branches in a repository you already have.
 impadmin@Impetus-N236U:~/aditya/git-repo$ git clone https://github.com/idatya/help
-
-
-
-
 
 
