@@ -86,4 +86,16 @@ impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git push origin developm
 --clone is for fetching repositories you don't have, checkout is for switching between branches in a repository you already have.
 impadmin@Impetus-N236U:~/aditya/git-repo$ git clone https://github.com/idatya/help
 
+--to delete branches locally using
+git branch -d <branch_name>
+
+--to delete both locally and remotely using
+git push origin --delete <branch_name>
+
+--to avoid endless prompts (and force the command recursively), enter the following into the command line, within the project folder:
+rm -rf .git
+
+--Or to delete .gitignore and .gitmodules if any (via @aragaer):
+rm -rf .git*
+
 
