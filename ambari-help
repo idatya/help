@@ -5,37 +5,8 @@ service ambari-agent status
 service ambari-agent stop
 service ambari-agent start
 
-
-new ip: 192.168.218.114 (edge node) 122 
-new ip: 192.168.218.96 (HDP) 160
-
-new ip: 192.168.218.82 (edge node)  111
-new ip: 192.168.218.63 (HDP) 113
-
-
-
-New IP : 192.168.218.106
-Old IP: 192.168.145.134 
-
-HDP (Sunil’s seat in kblock):
-New IP : 192.168.218.88
-Old IP : 192.168.145.67)
-
-
 --skip-database-check
-http://192.168.218.111:8080/jenkins/ <http://192.168.218.111:8080/jenkins/>
 vi /var/log/hadoop/hdfs/hadoop-hdfs-namenode-IMPETUS-D951.log
-
-8114
-
-
-jdbc.driver=org.postgresql.Driver
-jdbc.password=password
-jdbc.url=jdbc:postgresql://IMPETUS-DSRV10.impetus.co.in:15013/pipelinedbv3?OpenSourceSubProtocolOverride=true
-jdbc.user=idwadmin
-
-
-15013
 
 
 1. Stop ambari-server : sudo service ambari-server stop
@@ -55,6 +26,3 @@ hostname=$Ambari Server IP Adress
 ===================================================
 ambari-agent reset <ambari-server-hostname>
 
-
-
-https://unify.impetus.co.in/iLabs/atlas/_layouts/15/WopiFrame.aspx?sourcedoc=%7BEFB65053-9658-4AA2-B1F1-D65D0E6708E4%7D&file=Oracle%20Mapping%20Sheet_Feb2016.xlsx&action=default&DefaultItemOpen=1
