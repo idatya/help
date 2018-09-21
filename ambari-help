@@ -26,3 +26,14 @@ hostname=$Ambari Server IP Adress
 ===================================================
 ambari-agent reset <ambari-server-hostname>
 
+===================================================
+To know the status of Safemode, use command:
+hdfs dfsadmin –safemode get
+
+To enter Safemode, use command:
+hdfs dfsadmin -safemode enter
+or
+hdfs dfs -safemode start
+
+To come out of Safemode, use command:
+hdfs dfsadmin -safemode leave
