@@ -1,0 +1,51 @@
+[]TO install mysql
+sudo apt install mysql-server
+update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+
+--------------------------------------------------------------------------------------------------
+MySQL is installed with a basic configuration meant for development and testing purposes. However, the configuration is not secure for production enviroments, therefore it comes with a utility to handle basic security. Run the following command and answer the questions based on your environment requirements.
+
+sudo mysql_secure_installation
+Creating MySQL Users
+
+--------------------------------------------------------------------------------------------------
+To create a non-root user, connect to the MySQL instance with the mysql command line client.
+
+mysql -u root -p
+Now use the CREATE USER command to generate a new user. Make sure to change "mynewuser" and "goodPassword" with your own values.
+
+CREATE USER 'mynewuser'@'localhost' IDENTIFIED BY 'goodPassword';
+
+GRANT ALL PRIVILEGES ON * . * TO 'mynewuser'@'localhost';
+
+FLUSH PRIVILEGES;
+
+--------------------------------------------------------------------------------------------------
+How to set up MySQL for remote access
+
+Step one: Allowing access
+Out of the box, MySQL will only allow access from the localhost address 127.0.0.1. To change this, you need to open the /etc/mysql/mysql.conf.d/mysqld.cnf file and change the line:
+
+bind-address = 127.0.0.1
+to:
+bind-address = 0.0.0.0
+Save and close that file. Restart the MySQL server with the command:
+
+systemctl restart mysql.service
+
+Step two: Granting access to the user
+Log in to the MySQL server.
+Log in to MySQL with the command mysql -u root -p
+Type the MySQL root user password.
+Issue the MySQL command:
+GRANT ALL ON *.* TO 'username'@'192.168.1.100' IDENTIFIED BY 'yourpassword' WITH GRANT OPTION;
+Or
+GRANT ALL ON specificDatabase.* TO 'username'@'192.168.1.100' IDENTIFIED BY 'yourpassword' WITH GRANT OPTION;
+Flush the MySQL privileges with the command FLUSH PRIVILEGES;
+Exit out of the MySQL prompt with the command exit;
+
+[Problem]Host 'xxx.xx.xxx.xxx' is not allowed to connect to this MySQL server
+[Solution]
+CREATE USER 'root'@'%' IDENTIFIED BY 'root';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;

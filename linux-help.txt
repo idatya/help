@@ -1,0 +1,92 @@
+DDpKd9P8dWj.s
+
+Installation:
+------------
+cd /tmp
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+wget http://apache.mirrors.timporter.net/maven/maven-3/3.2.1/binaries/apache-maven-3.2.1-bin.tar.gz
+
+sudo apt-get install subversion
+sudo apt-get install pgadmin3
+(restart system is required)
+
+[]To install a downloaded Debian (Ubuntu) package (.deb): Open Terminal and type
+-------------------------------------------------------------------------------
+sudo dpkg -i packagename.deb
+
+[]To remove a Debian (Ubuntu) package (.deb):
+sudo dpkg -r packagename
+
+[]To Reconfigure/Repair an installed Debian (Ubuntu) package (.deb):
+sudo dpkg-reconfigure packagename
+
+[]To repairUnmet dependencies problem
+sudo apt --fix-broken install
+
+Change ownership of directory to specified user and default group
+-----------------------------------------------------------------
+sudo chown -R impadmin: 7.0.47
+
+
+tomcat
+------
+tail -f ../logs/catalina.out
+jps
+jpd
+ps -eaf | grep tomcat
+
+
+Postgres:
+--------
+set trust authentication in the pg_hba.conf file (if required): 
+local   all   all   trust
+
+
+sudo -u postgres psql postgres
+psql -h localhost -p 5432 -U postgres pipelinedbv3
+create database pipelinedbv3;
+
+psql -h 192.168.145.50 -U idwblend -d pipelinedbv3
+
+psql -h localhost -p 5432 -dbname "pipelinedbv3" -U postgres -W < /home/impadmin/Desktop/pipelinedbv3.backup
+
+for specifying database name => Provide option [-dbname "myDB1235"]
+
+How to change PostgreSQL user password:
+sudo -u postgres psql
+\password postgres
+\q
+sudo service postgresql restart
+
+backup:
+/usr/bin/pg_dump --host 192.168.145.50 --port 5432 --username "idwblend" --no-password  --format custom --blobs --verbose --file "/home/impadmin/Desktop/dev-pipelinedb.backup" "pipelinedb"
+
+----------------------
+So all you have to do is remove all the virtualbox packages:
+
+sudo apt-get remove virtualbox virtualbox-4.* virtualbox-5.0
+Then update kernel:
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get -f --fix-missing upgrade
+sudo apt-get install linux-generic
+
+sudo dpkg -i sky_ubuntu64_v2.0.443.deb
+
+
+--------------------------
+ssh-keygen -R <host>
+
+
+----------------------------
+
+dpkg --list
+sudo apt-get --purge remove <>
+sudo apt-get remove <>
+sudo apt-get autoremove
+sudo apt-get purge --auto-remove <>
+If you’re short on space, you can use the “clean” command to remove downloaded archive files, as shown below.
+sudo apt-get clean
