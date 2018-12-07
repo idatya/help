@@ -19,6 +19,10 @@ git branch
 git clone -branch
 git clone -branch new_feature git://remoterepository.git
 
+[6]
+--git clone
+--clone is for fetching repositories you don't have, checkout is for switching between branches in a repository you already have.
+impadmin@Impetus-N236U:~/aditya/git-repo$ git clone https://github.com/idatya/help
 
 Summary
 In this document we took a deep look at git clone. The most important takeaways are:
@@ -82,10 +86,6 @@ impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git checkout development
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git rebase master
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git push origin development 
 
---git clone
---clone is for fetching repositories you don't have, checkout is for switching between branches in a repository you already have.
-impadmin@Impetus-N236U:~/aditya/git-repo$ git clone https://github.com/idatya/help
-
 --to delete branches locally using
 git branch -d <branch_name>
 
@@ -97,5 +97,3 @@ rm -rf .git
 
 --Or to delete .gitignore and .gitmodules if any (via @aragaer):
 rm -rf .git*
-
-

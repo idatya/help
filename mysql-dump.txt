@@ -1,0 +1,33 @@
+Step 1 - Perform MySQL Dump
+You can dump all your MySQL databases to a single file using this:
+
+	mysqldump -u root –p –all-databases > [dump_file.sql]
+
+or if you want to dump a single database, you can use:
+
+	mysqldump -u root –p [database_name] > [dump_file.sql]
+
+[database_name]: The name of the database you want to take backup.
+[dump_file.sql]: The name of the dump file you want to generate.
+
+If the database you’re transferring is running or in use, you can stop the mysql using the systemctl command as shown:
+
+	systemctl stop mysql
+
+After the dump is performed, you can now transfer the database to the new server.
+
+Step 2 – Transfer the MySQL Database Dump File to the New Server
+In this step, we are using the SCP command to transfer the database dump file to the new server.
+
+	scp [database name].sql [username]@[servername]:[database path]
+
+Step 3 - Import the Database
+Once the MySQL dump file has been transferred to the new server, you can import the database into MySQL:
+
+	mysql -u root -p [name of new database] < /path/to/newdatabase.sql
+
+Step 4 – Verify the Database Imported
+Once the import is completed, you can verify the databases on both servers on the mysql shell using these commands:
+
+	mysql -u user -p
+	show databases;
