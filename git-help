@@ -97,3 +97,11 @@ rm -rf .git
 
 --Or to delete .gitignore and .gitmodules if any (via @aragaer):
 rm -rf .git*
+
+--after deleteing some file from local repository, we sould run
+git add -u
+--It will never stage new files, but that it will stage modified new contents of tracked files and that it will remove files from the index if the corresponding files in the working tree have been removed.
+
+--to set new remote url
+git remote set-url origin https://github.com/idatya/core-spark.git
+
