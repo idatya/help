@@ -32,12 +32,13 @@ In this document we took a deep look at git clone. The most important takeaways 
 3. Git supports a few network protocols to connect to remote repos
 4. There are many different configuration options available that change the content of the clone
  
+[7]
 [checkpout new project]
 git clone http://git-impetus/iLabs/IDW-WM-PRODUCT.git .
 
-
+[8]
 [commands]
-got clone https://github.com/idatya/myapp
+git clone https://github.com/idatya/myapp
 git add demo
 touch test.txt
 git add test.txt 
@@ -50,28 +51,32 @@ impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git add connecture.txt
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git commit -m "connecture test"
 
 
-
+[9]
 --committing a specific directory
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git add big-data/
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git commit -m "bigdata test" big-data/
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git push origin master
 
+[10]
 --create new branch
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp$ git checkout -b "development"
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp$ git push origin development 
 
+[11]
 --check status
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp$ git status
 
+[12]
 --switch branch
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp$ git checkout master
 
+[13]
 --merge branch
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp$ git checkout master 
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp$ git merge development 
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp$ git push origin master
 
-
+[14]
 --made changes in master branch and pushed it
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus/big-data$ vi idw.txt 
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus/big-data$ vi idw.txt 
@@ -80,28 +85,33 @@ impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git add big-data/idw.txt
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git commit -m "test for rebase"
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git push origin master
 
-
+[15]
 --Instead of a plain git merge, we’ll integrate the feature branch with a rebase to maintain a linear history:
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git checkout development 
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git rebase master
 impadmin@Impetus-N236U:~/aditya/git-repo/myapp/impetus$ git push origin development 
 
+[16]
 --to delete branches locally using
 git branch -d <branch_name>
 
+[17]
 --to delete both locally and remotely using
 git push origin --delete <branch_name>
 
+[18]
 --to avoid endless prompts (and force the command recursively), enter the following into the command line, within the project folder:
 rm -rf .git
 
+[19]
 --Or to delete .gitignore and .gitmodules if any (via @aragaer):
 rm -rf .git*
 
+[20]
 --after deleteing some file from local repository, we sould run
 git add -u
 --It will never stage new files, but that it will stage modified new contents of tracked files and that it will remove files from the index if the corresponding files in the working tree have been removed.
 
+[21]
 --to set new remote url
 git remote set-url origin https://github.com/idatya/core-spark.git
-
