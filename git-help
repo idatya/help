@@ -25,8 +25,7 @@ git clone -branch new_feature git://remoterepository.git
 impadmin@Impetus-N236U:~/aditya/git-repo$ git clone https://github.com/idatya/help
 
 Summary
-In this document we took a deep look at git clone. The most important takeaways are:
-
+The most important takeaways are:
 1. git clone is used to create a copy of a target repo
 2. The target repo can be local or remote
 3. Git supports a few network protocols to connect to remote repos
@@ -97,6 +96,7 @@ git branch -d <branch_name>
 
 [17]
 --to delete both locally and remotely using
+git push --delete <remote_name> <branch_name>
 git push origin --delete <branch_name>
 
 [18]
@@ -115,3 +115,18 @@ git add -u
 [21]
 --to set new remote url
 git remote set-url origin https://github.com/idatya/core-spark.git
+
+[22]
+git pull does a git fetch followed by a git merge.
+A git pull is what you would do to bring a local branch up-to-date with its remote version, while also updating your other remote-tracking branches.
+
+[23]
+--Rename a branch 
+If you want to rename a branch while pointed to any branch, do:
+git branch -m <oldname> <newname>
+
+If you want to rename the current branch, you can do:
+git branch -m <newname>
+
+If you are on Windows or another case-insensitive filesystem, and there are any capitalization change in the name, you need to use -M, otherwise, git will throw branch already exists error:
+git branch -M <newname>
