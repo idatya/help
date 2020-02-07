@@ -1,3 +1,13 @@
+[0]
+[commit new project]
+git init
+git add .
+git config user.email "iadityasingh@gmail.com"
+git config user.name "idatya"
+git commit -m "first commit"
+git remote add origin https://github.com/idatya/xml-reader.git
+git push -u origin master
+
 [1]
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
@@ -111,6 +121,9 @@ rm -rf .git*
 --after deleteing some file from local repository, we sould run
 git add -u
 --It will never stage new files, but that it will stage modified new contents of tracked files and that it will remove files from the index if the corresponding files in the working tree have been removed.
+git add -A
+Update the index not only where the working tree has a file matching <pathspec> but also where the index already has an entry. This adds, modifies, and removes index entries to match the
+working tree.
 
 [21]
 --to set new remote url
@@ -130,3 +143,5 @@ git branch -m <newname>
 
 If you are on Windows or another case-insensitive filesystem, and there are any capitalization change in the name, you need to use -M, otherwise, git will throw branch already exists error:
 git branch -M <newname>
+
+
